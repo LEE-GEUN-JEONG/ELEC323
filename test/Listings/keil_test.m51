@@ -1,0 +1,141 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    05/24/2019  13:47:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\test.obj TO .\Objects\keil_test PRINT (.\Listings\keil_test.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\test.obj (TEST)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDIIDATA)
+
+
+LINK MAP OF MODULE:  .\Objects\keil_test (TEST)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0032H     UNIT         ?C?LIB_CODE
+            CODE    0832H     002EH     UNIT         ?PR?MAIN?TEST
+            CODE    0860H     0023H     UNIT         ?PR?_DELAYMS?TEST
+            CODE    0883H     000CH     UNIT         ?C_C51STARTUP
+            CODE    088FH     000AH     UNIT         ?PR?_DELAYUS?TEST
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\keil_test (TEST)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?TEST
+
+?PR?MAIN?TEST                  -----    -----
+  +--> ?PR?_DELAYMS?TEST
+
+?PR?_DELAYMS?TEST              0008H    0004H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\keil_test (TEST)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TEST
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/24/2019  13:47:31  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0860H         PUBLIC        _DelayMS
+  B:00B0H.3       PUBLIC        P3b3
+  B:00B0H.4       PUBLIC        P3b4
+  C:088FH         PUBLIC        _DelayUS
+  C:0832H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0832H         LINE#         10
+  C:0832H         LINE#         11
+  C:0832H         LINE#         14
+  C:0832H         LINE#         15
+  C:0832H         LINE#         16
+  C:0834H         LINE#         17
+  C:0836H         LINE#         18
+  C:0839H         LINE#         19
+  C:083EH         LINE#         21
+  C:0840H         LINE#         22
+  C:0843H         LINE#         23
+  C:0848H         LINE#         25
+  C:084AH         LINE#         26
+  C:084CH         LINE#         27
+  C:084FH         LINE#         28
+  C:0854H         LINE#         30
+  C:0856H         LINE#         31
+  C:0859H         LINE#         32
+  C:085EH         LINE#         33
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAYUS
+  D:0007H         SYMBOL        us
+  C:088FH         LINE#         37
+  C:088FH         LINE#         38
+  C:088FH         LINE#         39
+  C:0895H         LINE#         40
+  C:0895H         LINE#         41
+  C:0896H         LINE#         42
+  C:0898H         LINE#         43
+  -------         ENDPROC       _DELAYUS
+  -------         PROC          _DELAYMS
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0008H         SYMBOL        us
+  -------         ENDDO         
+  C:0860H         LINE#         46
+  C:0860H         LINE#         47
+  C:0860H         LINE#         48
+  C:0872H         LINE#         50
+  C:087FH         LINE#         51
+  C:087FH         LINE#         52
+  C:0880H         LINE#         53
+  C:0882H         LINE#         54
+  -------         ENDPROC       _DELAYMS
+  -------         ENDMOD        TEST
+
+  -------         MODULE        ?C?IMUL
+  C:0800H         PUBLIC        ?C?IMUL
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  05/24/2019  13:47:31  PAGE 3
+
+
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?LLDIIDATA
+  C:081BH         PUBLIC        ?C?LLDIIDATA
+  C:0812H         PUBLIC        ?C?LLDIIDATA1
+  C:0814H         PUBLIC        ?C?LLDIIDATA8
+  -------         ENDMOD        ?C?LLDIIDATA
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYUS?TEST
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005BH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=13.0 xdata=0 code=156
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
